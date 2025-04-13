@@ -28,53 +28,80 @@ public class VistaMenuInicio extends javax.swing.JFrame implements InterfaceVist
     private void initComponents() {
 
         jPanel1 = new javax.swing.JPanel();
-        botonAgregar = new javax.swing.JButton();
         botonListar = new javax.swing.JButton();
+        jPanel2 = new javax.swing.JPanel();
+        jLabel1 = new javax.swing.JLabel();
+        botonAgregar = new javax.swing.JButton();
         botonSalir = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        jPanel1.setBackground(new java.awt.Color(204, 255, 204));
+        jPanel1.setBackground(new java.awt.Color(12, 46, 12));
+        jPanel1.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        botonAgregar.setText("Agregar");
-        botonAgregar.setBorderPainted(false);
-
+        botonListar.setFont(new java.awt.Font("Franklin Gothic Medium Cond", 1, 24)); // NOI18N
+        botonListar.setForeground(new java.awt.Color(255, 255, 255));
         botonListar.setText("Listar");
+        botonListar.setBorder(null);
+        botonListar.setContentAreaFilled(false);
+        botonListar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                botonListarActionPerformed(evt);
+            }
+        });
+        jPanel1.add(botonListar, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 140, -1, -1));
 
+        jPanel2.setBackground(new java.awt.Color(14, 133, 7));
+
+        jLabel1.setBackground(new java.awt.Color(0, 0, 0));
+        jLabel1.setFont(new java.awt.Font("Dialog", 1, 36)); // NOI18N
+        jLabel1.setForeground(new java.awt.Color(0, 0, 0));
+        jLabel1.setText("Menu zoologico");
+        jPanel2.add(jLabel1);
+
+        jPanel1.add(jPanel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 400, 60));
+
+        botonAgregar.setFont(new java.awt.Font("Franklin Gothic Medium Cond", 1, 24)); // NOI18N
+        botonAgregar.setForeground(new java.awt.Color(255, 255, 255));
+        botonAgregar.setText("Agregar");
+        botonAgregar.setBorder(null);
+        botonAgregar.setContentAreaFilled(false);
+        botonAgregar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                botonAgregarActionPerformed(evt);
+            }
+        });
+        jPanel1.add(botonAgregar, new org.netbeans.lib.awtextra.AbsoluteConstraints(250, 140, -1, -1));
+
+        botonSalir.setBackground(new java.awt.Color(0, 102, 0));
+        botonSalir.setFont(new java.awt.Font("Franklin Gothic Medium Cond", 1, 14)); // NOI18N
+        botonSalir.setForeground(new java.awt.Color(255, 255, 255));
         botonSalir.setText("Salir");
-
-        javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
-        jPanel1.setLayout(jPanel1Layout);
-        jPanel1Layout.setHorizontalGroup(
-            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
-                .addGap(65, 65, 65)
-                .addComponent(botonListar)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 134, Short.MAX_VALUE)
-                .addComponent(botonAgregar)
-                .addGap(62, 62, 62))
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addComponent(botonSalir)
-                .addGap(16, 16, 16))
-        );
-        jPanel1Layout.setVerticalGroup(
-            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel1Layout.createSequentialGroup()
-                .addGap(128, 128, 128)
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(botonAgregar)
-                    .addComponent(botonListar))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 94, Short.MAX_VALUE)
-                .addComponent(botonSalir)
-                .addGap(14, 14, 14))
-        );
+        botonSalir.setBorder(null);
+        botonSalir.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                botonSalirActionPerformed(evt);
+            }
+        });
+        jPanel1.add(botonSalir, new org.netbeans.lib.awtextra.AbsoluteConstraints(320, 260, 60, 30));
 
         getContentPane().add(jPanel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 400, 300));
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
+
+    private void botonListarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_botonListarActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_botonListarActionPerformed
+
+    private void botonAgregarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_botonAgregarActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_botonAgregarActionPerformed
+
+    private void botonSalirActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_botonSalirActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_botonSalirActionPerformed
 
     /**
      * @param args the command line arguments
@@ -115,7 +142,9 @@ public class VistaMenuInicio extends javax.swing.JFrame implements InterfaceVist
     private javax.swing.JButton botonAgregar;
     private javax.swing.JButton botonListar;
     private javax.swing.JButton botonSalir;
+    private javax.swing.JLabel jLabel1;
     private javax.swing.JPanel jPanel1;
+    private javax.swing.JPanel jPanel2;
     // End of variables declaration//GEN-END:variables
 
     @Override
@@ -128,7 +157,7 @@ public class VistaMenuInicio extends javax.swing.JFrame implements InterfaceVist
         botonListar.setActionCommand(botonListarInt);
         botonAgregar.setActionCommand(botonAgregarInt);
         botonSalir.setActionCommand(botonSalirInt);
-        
+
         botonListar.addActionListener(c);
         botonAgregar.addActionListener(c);
         botonSalir.addActionListener(c);
@@ -138,5 +167,5 @@ public class VistaMenuInicio extends javax.swing.JFrame implements InterfaceVist
     public void salir() {
         this.dispose();
     }
-    
+
 }

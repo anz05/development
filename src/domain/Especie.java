@@ -1,6 +1,7 @@
 package domain;
 
 public class Especie {
+
     private String nombre;
     private double porcentajePesoCarnivoro;
 
@@ -8,8 +9,21 @@ public class Especie {
 
     public Especie(String nombre, TipoAlimentacion tipoAlimentacion, double porcentajePesoCarnivoro) {
         this.nombre = nombre;
-        if(tipoAlimentacion.esCarnivoro()){
+        if (tipoAlimentacion.esCarnivoro()) {
             this.porcentajePesoCarnivoro = porcentajePesoCarnivoro;
+        }
+        this.tipoAlimentacion = tipoAlimentacion;
+    }
+
+    public Especie(String nombre, TipoAlimentacion tipoAlimentacion) {
+        this.nombre = nombre;
+        if(tipoAlimentacion.esCarnivoro()){
+            if(nombre.equals("León")){
+                this.porcentajePesoCarnivoro = 0.2;
+            }
+            if(nombre.equals("Tigre")){
+                this.porcentajePesoCarnivoro = 0.15;
+            } 
         }
         this.tipoAlimentacion = tipoAlimentacion;
     }
@@ -27,7 +41,7 @@ public class Especie {
     }
 
     @Override
-    public String toString(){
+    public String toString() {
         return nombre;
     }
 }
