@@ -15,11 +15,13 @@ import views.ComidaViewModel;
 import views.ComidaViewModel;
 import views.ListarAnimalesView;
 import views.VistaAgregar;
+import views.VistaMenuInicio;
 
 public class Controlador implements ActionListener {
 
     private data.Persistencia persistencia;
     private VistaAgregar vistaAgregar;
+    private VistaMenuInicio vistaMenuInicio;
     private ListarAnimalesView vistaAnimales;
 
     public Controlador() {
@@ -33,13 +35,28 @@ public class Controlador implements ActionListener {
         vistaAgregar = new VistaAgregar();
         vistaAgregar.cargarComboPais(persistencia);
 
+        vistaMenuInicio = new VistaMenuInicio();
+        vistaMenuInicio.setControlador(this);
+        vistaMenuInicio.ejecutar();
     }
 
     @Override
     public void actionPerformed(ActionEvent e) {
         System.out.println("OCURRIO UN EVENTO: " + e.getActionCommand());
 
-        try { 
+        try {
+            //Botones de vista menu
+            if (e.getActionCommand().equals(vistaMenuInicio.botonListarInt)) {
+                vistaAnimales.setVisible(true);
+            }
+            if (e.getActionCommand().equals(vistaMenuInicio.botonAgregarInt)) {
+                vistaAgregar.setControlador(this);
+                vistaAgregar.ejecutar();
+
+            }
+            if (e.getActionCommand().equals(vistaMenuInicio.botonSalirInt)) {
+                vistaMenuInicio.salir();
+            }
             //Botones de la vista agregar
             if (e.getActionCommand().equals(vistaAgregar.botonAgregarInt)) {
                 try {
